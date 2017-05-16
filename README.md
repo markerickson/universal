@@ -25,7 +25,7 @@
 # Introduction
 The Angular Universal project consists of the base platform API and the surrounding tools that enables developer to do server side rendering(or pre-rendering) of Angular applications. The platform API part has been merged into Angular core as of 4.0. 
 
-This repository will host the various tools like engines to integrate with various backends(NodeJS, ASP.NET etc.) and also extra modules and examples to help you started with server side rendering.
+This repository will host the various tools like engines to integrate with various backends(NodeJS, ASP.NET etc.) and also extra modules and examples to help you get started with server side rendering.
 
 # Upgrading from Angular2-Universal
 > If you're coming from the original `angular2-universal` (2.x) here are some helpful steps for porting your application to Angular 4 & platform-server.
@@ -95,8 +95,8 @@ This repository will host the various tools like engines to integrate with vario
      }
     ```
     
-     - Try to *limit or* **avoid** using **`setTimeout`**. It will slow down the server-side rendering process. Make sure to remove them in the [`ngOnDestroy`](https://angular.io/docs/ts/latest/api/core/index/OnDestroy-class.html) method of your Components.
-   - Also for RxJs timeouts, make sure to _cancel_ their stream on success, for they can slow down rendering as well.
+ - Try to *limit or* **avoid** using **`setTimeout`**. It will slow down the server-side rendering process. Make sure to remove them in the [`ngOnDestroy`](https://angular.io/docs/ts/latest/api/core/index/OnDestroy-class.html) method of your Components.
+   - Also for RxJs timeouts, make sure to _cancel_ their stream on success, they can slow down rendering as well.
  - **Don't manipulate the nativeElement directly**. Use the _Renderer2_. We do this to ensure that in any environment we're able to change our view.
 ```
 constructor(element: ElementRef, renderer: Renderer) {
